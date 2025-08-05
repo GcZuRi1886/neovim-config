@@ -1,0 +1,17 @@
+return {
+	  "linux-cultist/venv-selector.nvim",
+	  lazy = false,
+    cmd = "VenvSelect",
+	  opts = {
+        automatic = true,
+        persist_on_write = true,
+        venv_history = vim.fn.stdpath("data") .. "/venv-selector.json",
+    },
+	  keys = {
+		    { "<leader>cv", "<cmd>VenvSelect<cr>", desc = "Select VirtualEnv" },
+	  },
+    dependencies = {
+        "neovim/nvim-lspconfig",
+        "nvim-telescope/telescope.nvim"
+    }
+}
