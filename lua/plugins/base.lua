@@ -1,10 +1,8 @@
 return {
     { "nvim-lua/plenary.nvim" },
-    -- { "nvim-telescope/telescope.nvim", config = true },
-    -- { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", config = true },
-    { "neovim/nvim-lspconfig" },
+    { "folke/snacks.nvim" },
     { "williamboman/mason.nvim", build = ":MasonUpdate", config = true },
-    { "williamboman/mason-lspconfig.nvim", config = true },
+    -- { "williamboman/mason-lspconfig.nvim", config = true },
     { "hrsh7th/nvim-cmp", config = true },
     { "L3MON4D3/LuaSnip", config = true },
     { "saadparwaiz1/cmp_luasnip" },
@@ -20,5 +18,5 @@ return {
         priority = 1000,
         config = true
     },
-    { "nvim-tree/nvim-web-devicons", lazy = false }
+    { "nvim-tree/nvim-web-devicons", lazy = false },
 }
