@@ -9,7 +9,9 @@ return {
       auto_trigger = true,
       hide_during_completion = vim.g.ai_cmp,
       keymap = {
-        accept = false, -- handled by nvim-cmp / blink.cmp
+        accept = "<C-l>",
+        accept_word = "<C-Right>",
+        accept_line = "<C-Down>",
         next = "<M-]>",
         prev = "<M-[>",
       },

@@ -13,6 +13,8 @@ vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = 
 vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Action" })
 vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Prev Diagnostic" })
 vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Next Diagnostic" })
+vim.keymap.set("n", "<C-s>", ":w<CR>", { silent = true,  desc = "Save File" })
+vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>a", { silent = true, desc = "Save File in Insert Mode" })
 
 
 -- Accept Copilot suggestion

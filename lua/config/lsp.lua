@@ -1,28 +1,5 @@
 require("mason").setup()
 
---[[
-local mason_lsp = require("mason-lspconfig")
-
-mason_lsp.setup({
-  ensure_installed = { "lua_ls", "typescript-language-server", "pyright", "rust_analyzer" }
-})
-
-local lspconfig = require("lspconfig")
-
--- Check if the setup_handlers function exists
-if mason_lsp.setup_handlers then
-  mason_lsp.setup_handlers({
-    function(server_name)
-      lspconfig[server_name].setup({})
-    end
-  })
-else
-  -- Fallback: manually loop through installed servers
-  for _, server_name in ipairs(mason_lsp.get_installed_servers()) do
-    lspconfig[server_name].setup({})
-  end
-end
-]]
 local cmp = require("cmp")
 cmp.setup({
     snippet = {
@@ -31,11 +8,11 @@ cmp.setup({
         end
     },
     mapping = cmp.mapping.preset.insert({
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true })
+        ["<C-b>"] = cmp.mapping.complete(),
+        ["<CR>"] = cmp.mapping.confirm({ select = true })
     }),
+
     sources = cmp.config.sources({
-        { name = "copilot" },
         { name = "nvim_lsp" },
         { name = "luasnip" }
   })
@@ -43,9 +20,9 @@ cmp.setup({
 
 
 vim.diagnostic.config({
-    virtual_text = true,
+    virtual_text = false,
     signs = true,
     underline = true,
-    update_in_insert = false,
+    update_in_insert = true,
     severity_sort = true,
 })
