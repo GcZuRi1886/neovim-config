@@ -19,5 +19,4 @@ return {
         config = true
     },
     { "nvim-tree/nvim-web-devicons", lazy = false },
-    { "nvim-neotest/nvim-nio" },
 }

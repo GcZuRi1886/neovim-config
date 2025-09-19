@@ -23,3 +23,15 @@ vim.keymap.set("i", "<C-l>", 'copilot#Accept("<CR>")', {
   silent = true,
   desc = "Copilot Accept",
 })
+
+-- Neotest keymaps
+vim.keymap.set("n", "<leader>tn", function() require("neotest").run.run() end, { desc = "Run Nearest Test" })
+vim.keymap.set("n", "<leader>tf", function() require("neotest").run.run(vim.fn.expand("%")) end, { desc = "Run File Tests" })
+vim.keymap.set("n", "<leader>ts", function() require("neotest").summary.toggle() end, { desc = "Toggle Test Summary" })
+vim.keymap.set("n", "<leader>to", function() require("neotest").output.open({ enter = true }) end, { desc = "Open Test Output" })
+vim.keymap.set("n", "<leader>tl", function() require("neotest").run.run_last() end, { desc = "Run Last Test" })
+vim.keymap.set("n", "<leader>tD", function() require("neotest").run.run({ strategy = "dap" }) end, { desc = "Debug Nearest Test" })
+vim.keymap.set("n", "<leader>ta", function() require("neotest").run.run({ suite = true }); require("neotest").summary.open() end, { desc = "Run All Tests and open summary" })
+vim.keymap.set("n", "<leader>tA", function() require("neotest").run.run({ suite = true }) end, { desc = "Run All Tests" })
+vim.keymap.set("n", "<leader>tc", function() require("neotest").run.stop() end, { desc = "Stop Test" })
+vim.keymap.set("n", "<leader>td", function() require("neotest").run.run(vim.fn.expand("%:p:h")) end, { desc = "Run Tests in Current Directory" })
