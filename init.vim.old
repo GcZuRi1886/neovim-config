@@ -1,4 +1,0 @@
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let pakpath = &runtimepath
-source ~/.vimrc
-"lua require('init')

@@ -19,4 +19,15 @@ return {
         config = true
     },
     { "nvim-tree/nvim-web-devicons", lazy = false },
+    { "mfussenegger/nvim-jdtls" },
+    {
+      "mfussenegger/nvim-dap",
+    },
+    {
+      "rcarriga/nvim-dap-ui",
+      dependencies = { "mfussenegger/nvim-dap" },
+      config = function()
+        require("dapui").setup()
+      end,
+    },
 }
